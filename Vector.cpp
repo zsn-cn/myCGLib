@@ -130,6 +130,63 @@ myVector::~myVector()
 	}
 }
 
+myVector& myVector::operator*(int num)
+{
+	this->_x *= (double)num;
+	this->_y *= (double)num;
+	this->_z *= (double)num;
+	return *this;
+}
+
+myVector& myVector::operator*(float num)
+{
+	this->_x *= (double)num;
+	this->_y *= (double)num;
+	this->_z *= (double)num;
+	return *this;
+}
+
+myVector& myVector::operator*(double num)
+{
+	this->_x *= num;
+	this->_y *= num;
+	this->_z *= num;
+	return *this;
+}
+
+double myVector::operator[](int index)
+{
+	if (index == 0)
+	{
+		return this->_x;
+	}
+	else if (index == 1)
+	{
+		return this->_y;
+	}
+	else if (index == 2)
+	{
+		return this->_z;
+	}
+	else
+	{
+		cout << "the index is out of range." << endl;
+	}
+}
+
+myVector& myVector::projectionVec(myVector& vec)
+{
+	this->myVecPtr = new myVector;
+
+	myVector newVec(vec * (this->vecDot(vec) / vec.vecDot(vec)));
+
+	(*(this->myVecPtr))._x = newVec._x;
+	(*(this->myVecPtr))._y = newVec._y;
+	(*(this->myVecPtr))._z = newVec._z;
+
+	return *(this->myVecPtr);
+}
+
 ostream& operator<<(ostream& cout, myVector& vec)
 {
 	cout << "(" << vec._x << ", " << vec._y << ", " << vec._z << ")";

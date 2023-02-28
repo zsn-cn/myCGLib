@@ -50,7 +50,19 @@ public:
 	//向量归一化
 	friend myVector& norm(myVector& vec);
 
-private:
+	//向量数乘
+	myVector& operator*(int num);
+	myVector& operator*(float num);
+	myVector& operator*(double num);
+
+	//重载[]
+	double operator[](int index);
+
+	//向量投影操作
+	myVector& projectionVec(myVector& vec);
+	
+
+public:
 
 	//向量的三维坐标
 	double _x;
@@ -58,7 +70,7 @@ private:
 	double _z;
 
 	//临时用向量指针
-	myVector* myVecPtr;
+	myVector* myVecPtr = nullptr;
 
 private:
 
