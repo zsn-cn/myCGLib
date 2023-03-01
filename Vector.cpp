@@ -31,66 +31,74 @@ myVector& myVector::operator=(myVector& vec)
 
 myVector& myVector::operator+(myVector& vec)
 {
-	this->_x += vec._x;
-	this->_y += vec._y;
-	this->_z += vec._z;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x + vec._x;
+	(*(this->myVecPtr))._y = this->_y + vec._y;
+	(*(this->myVecPtr))._z = this->_z + vec._z;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator+(int num)
 {
-	this->_x += (double)num;
-	this->_y += (double)num;
-	this->_z += (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x + (double)num;
+	(*(this->myVecPtr))._y = this->_y + (double)num;
+	(*(this->myVecPtr))._z = this->_z + (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator+(float num)
 {
-	this->_x += (double)num;
-	this->_y += (double)num;
-	this->_z += (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x + (double)num;
+	(*(this->myVecPtr))._y = this->_y + (double)num;
+	(*(this->myVecPtr))._z = this->_z + (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator+(double num)
 {
-	this->_x += num;
-	this->_y += num;
-	this->_z += num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x + num;
+	(*(this->myVecPtr))._y = this->_y + num;
+	(*(this->myVecPtr))._z = this->_z + num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator-(myVector& vec)
 {
-	this->_x -= vec._x;
-	this->_y -= vec._y;
-	this->_z -= vec._z;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x - vec._x;
+	(*(this->myVecPtr))._y = this->_y - vec._y;
+	(*(this->myVecPtr))._z = this->_z - vec._z;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator-(int num)
 {
-	this->_x -= (double)num;
-	this->_y -= (double)num;
-	this->_z -= (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x - (double)num;
+	(*(this->myVecPtr))._y = this->_y - (double)num;
+	(*(this->myVecPtr))._z = this->_z - (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator-(float num)
 {
-	this->_x -= (double)num;
-	this->_y -= (double)num;
-	this->_z -= (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x - (double)num;
+	(*(this->myVecPtr))._y = this->_y - (double)num;
+	(*(this->myVecPtr))._z = this->_z - (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator-(double num)
 {
-	this->_x -= num;
-	this->_y -= num;
-	this->_z -= num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x - num;
+	(*(this->myVecPtr))._y = this->_y - num;
+	(*(this->myVecPtr))._z = this->_z - num;
+	return *(this->myVecPtr);
 }
 
 double myVector::vecDot(myVector& vec)
@@ -132,29 +140,32 @@ myVector::~myVector()
 
 myVector& myVector::operator*(int num)
 {
-	this->_x *= (double)num;
-	this->_y *= (double)num;
-	this->_z *= (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x * (double)num;
+	(*(this->myVecPtr))._y = this->_y * (double)num;
+	(*(this->myVecPtr))._z = this->_z * (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator*(float num)
 {
-	this->_x *= (double)num;
-	this->_y *= (double)num;
-	this->_z *= (double)num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x * (double)num;
+	(*(this->myVecPtr))._y = this->_y * (double)num;
+	(*(this->myVecPtr))._z = this->_z * (double)num;
+	return *(this->myVecPtr);
 }
 
 myVector& myVector::operator*(double num)
 {
-	this->_x *= num;
-	this->_y *= num;
-	this->_z *= num;
-	return *this;
+	this->myVecPtr = new myVector;
+	(*(this->myVecPtr))._x = this->_x * num;
+	(*(this->myVecPtr))._y = this->_y * num;
+	(*(this->myVecPtr))._z = this->_z * num;
+	return *(this->myVecPtr);
 }
 
-double myVector::operator[](int index)
+double& myVector::operator[](int index)
 {
 	if (index == 0)
 	{
@@ -174,7 +185,7 @@ double myVector::operator[](int index)
 	}
 }
 
-myVector& myVector::projectionVec(myVector& vec)
+myVector& myVector::vecProj(myVector& vec)
 {
 	this->myVecPtr = new myVector;
 
@@ -189,7 +200,7 @@ myVector& myVector::projectionVec(myVector& vec)
 
 ostream& operator<<(ostream& cout, myVector& vec)
 {
-	cout << "(" << vec._x << ", " << vec._y << ", " << vec._z << ")";
+	cout /*<< "("*/ << vec._x << ", " << vec._y << ", " << vec._z /*<< ")"*/;
 	return cout;
 }
 

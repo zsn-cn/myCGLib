@@ -56,10 +56,10 @@ public:
 	myVector& operator*(double num);
 
 	//重载[]
-	double operator[](int index);
+	double& operator[](int index);
 
 	//向量投影操作
-	myVector& projectionVec(myVector& vec);
+	myVector& vecProj(myVector& vec);
 	
 
 public:
