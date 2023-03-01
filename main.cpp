@@ -172,6 +172,7 @@ int main()
 				fout << "向量投影" << endl << vec1 << "\t" << vec2 << "\t" << vecRes << endl;
 			}
 		}
+
 		fin.close();
 		fout.close();
 	}
