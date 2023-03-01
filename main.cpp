@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//提取字符串中的数字并转换为double类型存储到double*指针中
 void str2double(string& str, double* doublePtr);
 
 int main()
@@ -181,14 +182,14 @@ int main()
 
 void str2double(string& str, double* doublePtr)
 {
-	int pos1, pos2;
+	size_t pos1, pos2;
 	string subStr;
 	pos1 = str.find(',', 0);
 	subStr = str.substr(0, pos1);
 	doublePtr[0] = stod(subStr, 0);
-	pos2 = str.find(',', pos1 + 1);
-	subStr = str.substr(pos1 + 1, pos2 - pos1 - 1);
+	pos2 = str.find(',', pos1 + (size_t)1);
+	subStr = str.substr(pos1 + (size_t)1, pos2 - pos1 - (size_t)1);
 	doublePtr[1] = stod(subStr, 0);
-	subStr = str.substr(pos2 + 1, str.size() - pos2 - 1);
+	subStr = str.substr(pos2 + (size_t)1, str.size() - pos2 - (size_t)1);
 	doublePtr[2] = stod(subStr, 0);
 }
