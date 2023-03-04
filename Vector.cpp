@@ -182,6 +182,7 @@ double& myVector::operator[](int index)
 	else
 	{
 		cout << "the index is out of range." << endl;
+		return this->_x;
 	}
 }
 

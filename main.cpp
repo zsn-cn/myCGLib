@@ -1,15 +1,17 @@
-#include "Vector.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <string>
+
+#include "Vector.h"
+#include "weOpenGL.h"
 
 using namespace std;
 
 //提取字符串中的数字并转换为double类型存储到double*指针中
 void str2double(string& str, double* doublePtr);
 
-int main()
+int main(int argc, char** argv)
 {
 	/*
 		作业1
@@ -179,6 +181,34 @@ int main()
 	/*
 		作业1
 	*/
+
+	/*
+		作业2
+	*/
+
+	//初始化
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+
+	//窗口设置
+	glutInitWindowPosition(0, 0);
+	glutInitWindowSize(1520, 800);
+	glutCreateWindow("图形引擎作业1-2");
+
+	//回调函数设置
+	glutDisplayFunc(&weDraw);
+	glutReshapeFunc(&weReshape);
+	glutMouseFunc(&weMouse);
+	glutMotionFunc(&weMotion);
+
+	//进入主循环
+	glutMainLoop();
+
+	/*
+		作业2
+	*/
+
+	return 0;
 }
 
 void str2double(string& str, double* doublePtr)

@@ -18,12 +18,18 @@
     <ClInclude Include="Vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="weOpenGL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="weOpenGL.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
